@@ -1,0 +1,65 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 16,
+   "metadata": {
+    "collapsed": false,
+    "deletable": true,
+    "editable": true
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Jobs Finished\n"
+     ]
+    }
+   ],
+   "source": [
+    "import glob, os\n",
+    "from PIL import Image\n",
+    "\n",
+    "def convert_images(input_folder, output_folder, size):\n",
+    "    url = os.path.join(input_folder+\"/*.jpg\")\n",
+    "    images = glob.glob(str(url))\n",
+    "    for image in images:\n",
+    "        file_name, ext_name = os.path.splitext(image)\n",
+    "        file_name2 = os.path.split(file_name)\n",
+    "        im = Image.open(image)\n",
+    "        im.thumbnail(size)\n",
+    "        if not os.path.isdir(output_folder):\n",
+    "            os.mkdir(output_folder)\n",
+    "        im.save(output_folder+r\"/\"+file_name2[1]+ext_name)\n",
+    "            \n",
+    "print(\"Jobs Finished\")\n",
+    "if __name__ == '__main__':\n",
+    "    image_size=[100, 300]\n",
+    "#     convert_images(image_size)\n",
+    "    convert_images(\"input\", \"output\", image_size)"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "my-virtualenv-python-homework",
+   "language": "python",
+   "name": "my-virtualenv-python-homework"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.6.0"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2
+}
