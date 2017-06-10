@@ -1,5 +1,8 @@
-import glob, os
+# coding: utf-8
+import glob
+import os
 from PIL import Image
+
 
 def convert_images(input_folder, output_folder, size):
     url = os.path.join(input_folder+"/*.jpg")
@@ -12,9 +15,9 @@ def convert_images(input_folder, output_folder, size):
         if not os.path.isdir(output_folder):
             os.mkdir(output_folder)
         im.save(output_folder+r"/"+file_name2[1]+ext_name)
-            
-print("Jobs Finished")
+    print(u"图片转换完成")
+
 if __name__ == '__main__':
-    image_size=[100, 300]
+    image_size = [100, 300]
 #     convert_images(image_size)
     convert_images("input", "output", image_size)
