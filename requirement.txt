@@ -9,9 +9,11 @@ ipython-genutils==0.2.0
 jedi==0.10.2
 jupyter-client==5.0.1
 jupyter-core==4.3.0
+olefile==0.44
 packaging==16.8
 pexpect==4.2.1
 pickleshare==0.7.4
+Pillow==4.1.1
 prompt-toolkit==1.0.14
 ptyprocess==0.5.1
 pycodestyle==2.3.1
