@@ -1,7 +1,8 @@
+# coding: utf-8
 # 第 0002 题：将 0001 题生成的 200 个激活码（或者优惠券）保存到 MySQL 关系型数据库中。
 import pymysql
 
-from generater import generater
+from .generater import generater
 
 
 def generaterToMySql(add_num, code_length):
